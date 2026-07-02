@@ -19,43 +19,82 @@ body {
 
 .weather-card {
     margin-top: 20px;
-    backdrop-filter: blur(20px);
-    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 25px;
     padding: 30px;
     color: white;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-.search-box{
+.weather-card {
+    transition: transform 0.3s ease;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+}
+
+.search-box {
     display: flex;
     gap: 10px;
+
 }
 
-input{
-    flex:1;
+input {
+    flex: 1;
     padding: 15px;
     border: none;
     border-radius: 15px;
     outline: none;
+    transition: 0.3s;
 }
 
-button{
+input:hover {
+    transform: scale(1.05)
+}
+
+button {
     padding: 15px 20px;
     border: none;
     border-radius: 15px;
     cursor: pointer;
 }
 
-.temperature{
-    font-size: 5rem;
-    font-weight:bold;
+button:hover {
+    transform: scale(1.05)
+}
+
+
+
+.temperature {
+    font-size: 6rem;
+    font-weight: 700;
     margin: 20px 0;
 }
 
-.details{
-    display:flex;
-    justify-content:space-around;
+.details {
+    display: flex;
+    justify-content: space-around;
     margin-top: 30px;
+}
+
+@media (max-width:480px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    #search {
+        width: 100%;
+    }
+
+    .temperature {
+        font-size: 4.5rem;
+    }
 }
