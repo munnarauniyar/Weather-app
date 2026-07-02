@@ -47,3 +47,15 @@ button{
     border-radius: 15px;
     cursor: pointer;
 }
+
+.temperature{
+    font-size: 5rem;
+    font-weight:bold;
+    margin: 20px 0;
+}
+
+.details{
+    display:flex;
+    justify-content:space-around;
+    margin-top: 30px;
+}
