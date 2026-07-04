@@ -46,6 +46,8 @@ async function getWeather(city) {
         searchButton.textContent = "Search";
         searchButton.disabled = false;
 
+        cityInput.value = "";
+
 
 
     }
