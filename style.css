@@ -87,11 +87,11 @@ button:hover {
     }
 
     .search-box {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     #search {
-        width: 100%;
+        width: 100px;
     }
 
     .temperature {
