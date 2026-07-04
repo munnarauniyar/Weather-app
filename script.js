@@ -1,12 +1,16 @@
 const searchButton = document.getElementById("search");
 const cityInput = document.getElementById("city");
 
-const
+const cityName = document.getElementById("city-name");
+const temperature = document.getElementById("temperature");
+const weatherCondition = document.getElementById("weather-condition");
+const humidity = document.getElementById("humidity");
+const windSpeed = document.getElementById("wind-speed");
 
-    searchButton.addEventListener("click", () => {
-        const city = cityInput.value;
-        getWeather(city);
-    });
+searchButton.addEventListener("click", () => {
+    const city = cityInput.value;
+    getWeather(city);
+});
 
 async function getWeather(city) {
 
@@ -15,18 +19,13 @@ async function getWeather(city) {
 
     const response = await fetch(url);
 
-
-    console.log(response);
-
     const data = await response.json();
 
-    console.log(data);
-    console.log(data.name);
-    console.log(data.main.humidity);
-    console.log(data.main.temp);
-    console.log(data.wind.speed);
-    console.log(data.weather[0].main);
-    console.log(data.weather[0].description);
+    cityName.textContent = data.name;
+    temperature.textContent = Math.round(data.main.temp) + "°C";
+    weatherCondition.textContent = data.weather[0].main;
+    humidity.textContent = data.main.humidity + "%";
+    windSpeed.textContent = data.wind.speed + "km/h";
 
 
 }
